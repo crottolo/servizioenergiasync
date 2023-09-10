@@ -91,6 +91,9 @@ async def get_contratto_by_id(id: str, user: dict = Depends(get_current_user)):
     return db.get_contratto_by_id(id)
 
 """DELETE BY ID"""
+@app.delete("/clienti/deleteall", tags=["Delete"])
+async def delete_all_clienti(user: dict = Depends(get_current_user)):
+    return db.delete_all_clienti()
 
 @app.delete("/clienti/{id}", tags=["Delete"])
 async def delete_cliente_by_id(id: str, user: dict = Depends(get_current_user)):
@@ -103,7 +106,3 @@ async def delete_fornitura_by_id(id: str, user: dict = Depends(get_current_user)
 @app.delete("/contratti/{id}", tags=["Delete"])
 async def delete_contratto_by_id(id: str, user: dict = Depends(get_current_user)):
     return db.delete_contratto_by_id(id)
-
-@app.delete("/clienti/deleteall", tags=["Delete"])
-async def delete_all_clienti(user: dict = Depends(get_current_user)):
-    return db.delete_all_clienti()
