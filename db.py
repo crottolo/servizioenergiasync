@@ -1,9 +1,14 @@
 from pymongo import MongoClient
 import json
 from bson import json_util, ObjectId
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 # Connettiti all'istanza MongoDB in esecuzione (supponendo che sia in esecuzione sulla porta predefinita 27017 sul tuo localhost)
-client = MongoClient('localhost', 27017)
+user = os.getenv("USER")
+password = os.getenv("PASSWORD")
+
+client = MongoClient('localhost', 27017, username=user, password=password)
 
 # Seleziona un database chiamato 'testdb'. Se non esiste, verrà creato.
 db = client.testdb
