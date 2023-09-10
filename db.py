@@ -5,10 +5,9 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 # Connettiti all'istanza MongoDB in esecuzione (supponendo che sia in esecuzione sulla porta predefinita 27017 sul tuo localhost)
-user = os.getenv("USER")
-password = os.getenv("PASSWORD")
 
-client = MongoClient('localhost', 27017, username=user, password=password)
+
+client = MongoClient('localhost', 27017)
 
 # Seleziona un database chiamato 'testdb'. Se non esiste, verrà creato.
 db = client.testdb
