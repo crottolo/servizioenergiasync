@@ -106,3 +106,11 @@ def delete_contratto_by_id(id):
         return True
     else:
         return False
+    
+def delete_all_clienti():
+    """Converti i risultati in JSON utilizzando json_util di pymongo e poi ritorna come dizionario"""
+    delete_result = clienti.delete_many({})
+    if delete_result.deleted_count > 0:
+        return True
+    else:
+        return False
