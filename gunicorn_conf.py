@@ -9,8 +9,8 @@ worker_class = 'uvicorn.workers.UvicornWorker'
 # # Logging Options
 # loglevel = 'debug'
 forwarded_allow_ips = '*'
-accesslog = './log/servizioenergia_access.log'
-errorlog =  './log/servizioenergia_error.log'
+accesslog = './log/access.log'
+errorlog =  './log/error.log'
 # capture_output = True
 # reload = True
 # reload_engine = "auto"
