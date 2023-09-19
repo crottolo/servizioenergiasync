@@ -35,19 +35,19 @@ GET ALL
 
 def get_clienti():
     # Converti i risultati in JSON utilizzando json_util di pymongo e poi ritorna come dizionario
-    people_list = list(clienti.find())
+    people_list = list(clienti.find().sort("_id", 1))
     people_json = json.loads(json_util.dumps(people_list))
     return people_json
 
 def get_contratti():
     # Converti i risultati in JSON utilizzando json_util di pymongo e poi ritorna come dizionario
-    contratti_list = list(contratti.find())
+    contratti_list = list(contratti.find().sort("_id", 1))
     contratti_json = json.loads(json_util.dumps(contratti_list))
     return contratti_json
 
 def get_forniture():
     # Converti i risultati in JSON utilizzando json_util di pymongo e poi ritorna come dizionario
-    fornitura_list = list(forniture.find())
+    fornitura_list = list(forniture.find().sort("_id", 1))
     fornitura_json = json.loads(json_util.dumps(fornitura_list))
     return fornitura_json
 

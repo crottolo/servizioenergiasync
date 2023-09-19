@@ -63,17 +63,27 @@ async def contratti(data: dict, user: dict = Depends(get_current_user)):
     else:
         return {"success": False, "error": "No data"}
     
+    
+    
 @app.get("/clienti", tags=["Get"])
 async def get_clienti(user: dict = Depends(get_current_user)):
-   
+    """
+        ordered from oldest to newest
+    """
     return db.get_clienti()
 
 @app.get("/forniture", tags=["Get"])
 async def get_forniture( user: dict = Depends(get_current_user) ):
+    """
+        ordered from oldest to newest
+    """
     return db.get_forniture()
 
 @app.get("/contratti", tags=["Get"])
 async def get_contratti( user: dict = Depends(get_current_user)):
+    """
+        ordered from oldest to newest
+    """
     return db.get_contratti()
     
 """GET BY ID"""
