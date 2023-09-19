@@ -1,0 +1,17 @@
+aggiungere il modulo json converter.bas
+
+
+andare in VB e aggiungere in riferimenti:
+
+microsoft xml 6.0
+microsoft winhttp services version 5.1
+microsoft script contro 1.0
+microsoft scripting runtime
+
+lo script vb per access deve essere impostato come nel file, 
+la parte dove avviene il tutto è la seguente:
+Private Sub Form_AfterUpdate()
+
+in questo caso aggiornando la maschera, vengono eseguite le operazioni di aggiornamento del database.
+
+bisogna solo capire se il dato è scritto solo in una tabella o piu.
