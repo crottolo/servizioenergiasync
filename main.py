@@ -25,7 +25,9 @@ secret = os.getenv("TOKEN")
 
 security = HTTPBearer()
 
-
+@app.on_event("startup")
+def check_log_dir():
+    os.makedirs("log", exist_ok=True)
 
 def get_current_user(authorization: HTTPAuthorizationCredentials = Depends(security)) -> dict:
     token = authorization.credentials
