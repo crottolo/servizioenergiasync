@@ -6,6 +6,7 @@ import db
 from dotenv import load_dotenv
 import os
 
+
 load_dotenv()
 
 
@@ -19,9 +20,12 @@ tags_metadata = [
 ]
 app = FastAPI(openapi_tags=tags_metadata)
 
+
 secret = os.getenv("TOKEN")
 
 security = HTTPBearer()
+
+
 
 def get_current_user(authorization: HTTPAuthorizationCredentials = Depends(security)) -> dict:
     token = authorization.credentials
