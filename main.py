@@ -54,7 +54,7 @@ async def clienti(data: dict, user: dict = Depends(get_current_user)):
     else:
         return {"success": False, "error": "No data"}
     
-@app.post('forniture', tags=["Post"])
+@app.post('/forniture', tags=["Post"])
 async def forniture(data: dict, user: dict = Depends(get_current_user)):
     if data:
         db.insert_forniture(data)
@@ -63,7 +63,7 @@ async def forniture(data: dict, user: dict = Depends(get_current_user)):
         return {"success": False, "error": "No data"}
     
     
-@app.post('contratti', tags=["Post"])
+@app.post('/contratti', tags=["Post"])
 async def contratti(data: dict, user: dict = Depends(get_current_user)):
     if data:
         db.insert_contratti(data)
